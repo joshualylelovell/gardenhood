@@ -1,9 +1,21 @@
-<% if signed_in? %>
-  <li><%= link_to 'Your Tools', tools_path %></li>
-  <li><%= link_to current_gardener.email, edit_gardener_registration_path %></li>
-  <li><%= link_to 'Sign out', destroy_gardener_session_path, method: 'delete' %></li>
-<% else %>
-  <li><%= link_to 'Sign up', new_gardener_registration_path %></li>
-  <li><%= link_to 'Sign in', new_gardener_session_path %></li>
-<% end %>
-<li><%= link_to 'About', '/about' %></li>
+<nav class="top-bar nav-desktop" id="gh-nav">
+  <div class="wrapper">
+    <div class="top-bar-left">
+        <h3 class="site-logo">GARDENHOOD</h3>
+    </div>
+
+    <div class="top-bar-right">
+        <ul class="menu menu-desktop">
+          <% if signed_in? %>
+            <li><%= link_to 'Your Tools', tools_path %></li>
+            <li><%= link_to current_gardener.email, edit_gardener_registration_path %></li>
+            <li><%= link_to 'Sign out', destroy_gardener_session_path, method: 'delete' %></li>
+          <% else %>
+            <li><%= link_to 'Sign up', new_gardener_registration_path %></li>
+            <li><%= link_to 'Sign in', new_gardener_session_path %></li>
+          <% end %>
+          <li><%= link_to 'About', '/about' %></li>
+        </ul>
+    </div>
+  </div>
+</nav>

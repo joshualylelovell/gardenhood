@@ -1,8 +1,10 @@
 <% provide(:title, 'Home') %>
-<div>
-  <h1>Gardenhood</h1>
-  <h3>This is your neighborhood toolshed</h3>
-  <br/>
-  <%= link_to "Sign up", new_gardener_registration_path %>
-  <%= link_to "Sign in", new_gardener_session_path %>
+<div id="gh-home-wrapper" style="background-image: url(<%= asset_path 'lawn_mower.jpeg' %>)">
+  <div id="marquee">
+    <h1 class="home-text">Gardenhood</h1>
+    <h3 class="home-text">This is your neighborhood toolshed</h3>
+    <br/>
+    <%= link_to "Sign up", new_gardener_registration_path, class: "success button" %>
+    <%= link_to "Sign in", new_gardener_session_path, class: "success button"%>
+  </div>
 </div>

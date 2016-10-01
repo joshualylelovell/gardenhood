@@ -17,3 +17,73 @@
  */
 
  /*= require foundation */
+
+/* ************************************
+GENERAL
+************************************ */
+
+* {
+  outline: none;
+}
+
+.wrapper {
+  margin: 0 auto;
+}
+
+/* ************************************
+NAVBAR
+************************************ */
+
+#gh-nav {
+  background-color: rgb(255,222,0);
+  color: rgb(54,124,43);
+}
+
+.menu > li > a {
+  color: rgb(54,124,43);
+  background-color: rgb(255,222,0);
+}
+
+.menu > li > a:hover {
+  color: rgb(255,222,0);
+  background-color: rgb(54,124,43);
+}
+
+/* ************************************
+STATIC PAGES
+************************************ */
+
+#gh-home-wrapper {
+  height: 100vh;
+  background: no-repeat center center fixed;
+  background-size: cover;
+  background-color: rgb(54,124,43);
+  margin: 0;
+  display: flex;
+  align-items: flex-end;
+}
+
+#marquee {
+  margin: 150px;
+}
+
+#marquee > h1 {
+  font-size: 7.5em;
+}
+
+#marquee > h3 {
+  font-size: 2.5em;
+}
+
+.home-text {
+  color: rgb(255,222,0);
+  font-weight: 450;
+}
+
+/* ************************************
+VIEWS BODY
+************************************ */
+
+/* ************************************
+FOOTER
+************************************ */
