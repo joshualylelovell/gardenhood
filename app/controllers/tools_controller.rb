@@ -1,5 +1,5 @@
 class ToolsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_gardener!
   before_action :set_tool, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -18,7 +18,7 @@ class ToolsController < ApplicationController
 
   def create
     @tool = Tool.new(tool_params)
-    @tool.gardener = current_gardener 
+    @tool.gardener = current_gardener
     respond_to do |format|
       if @tool.save
         format.html { redirect_to @tool, notice: 'Tool is now in your shed.' }
