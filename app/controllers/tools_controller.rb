@@ -1,8 +1,9 @@
 class ToolsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_tool, only: [:show, :edit, :update, :destroy]
 
   def index
-    @tools = Tool.all
+    @tools = current_gardener.tools.order(created_at: :desc)
   end
 
   def show
@@ -17,6 +18,7 @@ class ToolsController < ApplicationController
 
   def create
     @tool = Tool.new(tool_params)
+    @tool.gardener = current_gardener 
     respond_to do |format|
       if @tool.save
         format.html { redirect_to @tool, notice: 'Tool is now in your shed.' }
@@ -53,6 +55,7 @@ class ToolsController < ApplicationController
   # Use callbacks to share common setup or constraints.
   def set_tool
     @tool = Tool.find(params[:id])
+    redirect_to root_url, notice: 'Access Denied!' unless current_gardener.id == @tool.gardener.id
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.
