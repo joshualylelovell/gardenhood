@@ -3,7 +3,7 @@ class ToolsController < ApplicationController
   before_action :set_tool, only: [:show, :edit, :update, :destroy]
 
   def index
-    @tools = current_gardener.tools.order(created_at: :desc)
+    @tools = Tool.order(created_at: :desc)
   end
 
   def show
