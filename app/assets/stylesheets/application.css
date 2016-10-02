@@ -30,6 +30,11 @@ GENERAL
   margin: 0 auto;
 }
 
+#gh-success {
+  color: rgb(255,222,0);
+  font-weight: bold;
+}
+
 /* ************************************
 NAVBAR
 ************************************ */
@@ -37,11 +42,30 @@ NAVBAR
 #gh-nav {
   background-color: rgb(255,222,0);
   color: rgb(54,124,43);
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+#site-logo {
+  color: rgb(54,124,43);
+  background-color: rgb(255,222,0);
+  line-height: 80px;
+  padding-top: 0;
+  padding-bottom: 0;
+  font-size: 3em;
+}
+
+#site-logo:hover {
+  color: rgb(255,222,0);
+  background-color: rgb(54,124,43);
 }
 
 .menu > li > a {
   color: rgb(54,124,43);
   background-color: rgb(255,222,0);
+  line-height: 80px;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 .menu > li > a:hover {
@@ -99,6 +123,7 @@ VIEWS BODY
 
 .gh-devise-page-title {
   font-size: 4em;
+  color: rgb(255,222,0);
 }
 
 /* ************************************
