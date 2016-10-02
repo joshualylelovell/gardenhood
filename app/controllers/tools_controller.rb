@@ -21,7 +21,7 @@ class ToolsController < ApplicationController
     @tool.gardener = current_gardener
     respond_to do |format|
       if @tool.save
-        format.html { redirect_to @tool, notice: 'Tool is now in your shed.' }
+        format.html { redirect_to tools_path, notice: 'Tool is now in your shed.' }
         format.json { render :show, status: :created, location: @tool }
       else
         format.html { render :new }
