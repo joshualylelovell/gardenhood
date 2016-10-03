@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161003143810) do
+ActiveRecord::Schema.define(version: 20161003163114) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,19 @@ ActiveRecord::Schema.define(version: 20161003143810) do
     t.index ["reset_password_token"], name: "index_gardeners_on_reset_password_token", unique: true, using: :btree
   end
 
+  create_table "requests", force: :cascade do |t|
+    t.date     "start_date"
+    t.date     "end_date"
+    t.string   "notes"
+    t.string   "status"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "gardener_id"
+    t.integer  "tool_id"
+    t.index ["gardener_id"], name: "index_requests_on_gardener_id", using: :btree
+    t.index ["tool_id"], name: "index_requests_on_tool_id", using: :btree
+  end
+
   create_table "tools", force: :cascade do |t|
     t.string   "name",        null: false
     t.string   "details",     null: false
@@ -43,5 +56,7 @@ ActiveRecord::Schema.define(version: 20161003143810) do
     t.index ["gardener_id"], name: "index_tools_on_gardener_id", using: :btree
   end
 
+  add_foreign_key "requests", "gardeners"
+  add_foreign_key "requests", "tools"
   add_foreign_key "tools", "gardeners"
 end
