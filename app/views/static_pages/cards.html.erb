@@ -4,6 +4,32 @@
   <h1>Your Toolshed - Cards Test</h1>
 
   <div id=cards>
+
+    <div class="accordion card" data-accordion data-allow-all-closed="true">
+
+      <div class="accordion-item" data-accordion-item>
+
+        <a href="#" class="accordion-title">
+          <div>
+            <img src="assets/mower.jpeg" alt="">
+            <div class='details'>
+              <h4>John Deere Mega Mower Killer Destroyer</h4>
+              <p><span class='emph'>Owner:</span> Justin</p>
+            </div>
+          </div>
+        </a>
+
+        <div class='accordion-content details'>
+          <h6>Details:</h6>
+          <p>This is a killer mower!</p>
+        </div>
+
+      </div>
+
+    </div>
+
+
+
     <div class='card'>
       <img src="assets/mower.jpeg" alt="">
       <div class='details'>
@@ -40,4 +66,20 @@
   <br>
 
   <%= link_to 'New Tool', new_tool_path %>
+
+    <ul class="accordion" data-accordion>
+      <li class="accordion-item is-active" data-accordion-item>
+        <a href="" class="accordion-title">Accordion 1</a>
+        <div class="accordion-content" data-tab-content>
+          I would start in the open state, due to using the `is-active` state class.
+        </div>
+      </li>
+      <li class="accordion-item" data-accordion-item>
+        <a href="" class="accordion-title">Accordion 2</a>
+        <div class="accordion-content" data-tab-content>
+          NUMBER TWO
+        </div>
+      </li>
+    </ul>
+
 </div>

@@ -16,6 +16,7 @@ $gh-green: #367c2b;
       width: 48%;
       margin: 4px 0;
       display: flex;
+      flex-direction: column;
       align-items: center;
 
       .details {
@@ -40,6 +41,10 @@ $gh-green: #367c2b;
         h4 {
           display: inline-block;
           padding-right: 5px;
+          margin: 0;
+        }
+        p {
+          margin: 0;
         }
       }
 
