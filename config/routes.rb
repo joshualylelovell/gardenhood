@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root to: 'static_pages#home'
   get 'home', to: 'static_pages#home', as: 'home'
   get 'about', to: 'static_pages#about', as: 'about'
+  get 'cards', to: 'static_pages#cards', as: 'cards'
 
   # Devise
   devise_for :gardeners

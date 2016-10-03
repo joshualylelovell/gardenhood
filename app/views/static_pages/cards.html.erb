@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Your Toolshed - Cards Test</h1>
+
+
+<div class='card'>
+  <img src="assets/mower.jpeg" alt="">
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Details</th>
+      <th>Requested</th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <tr>
+        <td>Mower</td>
+        <td>This is a mower</td>
+        <td>True</td>
+        <td><a href="">Show</a></td>
+        <td><a href="">Edit</a></td>
+        <td><a href="">Destroy</a></td>
+      </tr>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tool', new_tool_path %>

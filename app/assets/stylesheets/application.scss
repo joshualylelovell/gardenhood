@@ -18,6 +18,9 @@
 
 @import "foundation_and_overrides";
 
+$gh-yellow: #ffde00;
+$gh-green: #367c2b;
+
 /* ************************************
 GENERAL
 ************************************ */
@@ -31,101 +34,8 @@ GENERAL
 }
 
 #gh-success {
-  color: rgb(255,222,0);
+  color: $gh-yellow;
   font-weight: bold;
 }
 
-/* ************************************
-NAVBAR
-************************************ */
 
-#gh-nav {
-  background-color: rgb(255,222,0);
-  color: rgb(54,124,43);
-  padding-top: 0;
-  padding-bottom: 0;
-}
-
-#site-logo {
-  color: rgb(54,124,43);
-  background-color: rgb(255,222,0);
-  line-height: 80px;
-  padding-top: 0;
-  padding-bottom: 0;
-  font-size: 3em;
-}
-
-#site-logo:hover {
-  color: rgb(255,222,0);
-  background-color: rgb(54,124,43);
-}
-
-.menu > li > a {
-  color: rgb(54,124,43);
-  background-color: rgb(255,222,0);
-  line-height: 80px;
-  padding-top: 0;
-  padding-bottom: 0;
-}
-
-.menu > li > a:hover {
-  color: rgb(255,222,0);
-  background-color: rgb(54,124,43);
-}
-
-/* ************************************
-STATIC PAGES
-************************************ */
-
-#gh-static-wrapper {
-  height: 100vh;
-  background: no-repeat center center fixed;
-  background-size: cover;
-  background-color: rgb(54,124,43);
-  margin: 0;
-  display: flex;
-  align-items: flex-end;
-}
-
-#marquee {
-  margin: 150px;
-}
-
-#marquee > h1 {
-  font-size: 7.5em;
-}
-
-#marquee > h3 {
-  font-size: 2.5em;
-}
-
-#marquee > h2 {
-  font-size: 4em;
-}
-
-#marquee > h4 {
-  font-size: 2.5em;
-}
-
-.static-text {
-  color: rgb(255,222,0);
-  font-weight: 450;
-}
-
-#marquee > ul > li > a {
-  color: rgb(255,222,0);
-  font-size: 1.8em;
-}
-
-/* ************************************
-VIEWS BODY
-************************************ */
-
-.gh-devise-page-title {
-  font-size: 4em;
-  color: rgb(255,222,0);
-}
-
-/* ************************************
-FOOTER
-************************************ */
