@@ -14,36 +14,32 @@ Gardener.delete_all()
 gardeners = []
 tools = []
 emails = ["joe@ga.co", "sue@ga.co", "jim@dundermifflininfinity.com", "creed@creedthoughts.creedthoughts", "me@yeah.com"]
+
 tool_seeds = [
   {
     name: "mower",
     details: "This is a mower.",
     image: "https://snowjoecdn.azureedge.net/images/gallery_medium/iON16LM-LT-HYB-SJG-1.jpg"
-    gardener: gardeners[i]
   },
   {
     name: "shovel",
     details: "This is a shovel.",
     image: "http://www.tosbase.com/content/img/icons/items/icon_item_shovel.png"
-    gardener: gardeners[i]
   },
   {
     name: "leafblower",
     details: "This is a leafblower.",
     image: "https://snowjoecdn.azureedge.net/images/gallery_medium/SBJ605E_unit%202_6-9-2015-16-24-51.jpg"
-    gardener: gardeners[i]
   },
   {
     name: "posthole digger",
     details: "This is a posthole digger.",
     image: "http://sites.ararental.org/Portals/dandrental/Post%20Hole%20Digger%20Hand.jpg"
-    gardener: gardeners[i]
   },
   {
     name: "backhoe",
     details: "This is a backhoe.",
     image: "http://clipartsign.com/upload/2016/02/26/backhoe-free-icons-iconset-transporter-multiview-icons-by-icons-land-clip-art.png"
-    gardener: gardeners[i]
   }
 ]
 
@@ -52,7 +48,10 @@ tool_seeds = [
     email: emails[i],
     password: "test1234"
   })
-  tools << Tool.create!(tool_seeds[i])
+  new_tool = Tool.new(tool_seeds[i])
+  new_tool.gardener = gardeners[i]
+  tools << new_tool.save
+
 end
 
 
