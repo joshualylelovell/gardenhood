@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Your Requests</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tool</th>
+      <th>Requested Dates</th>
+      <th>Notes</th>
+      <th>Status</th>
+      <th>Edit</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @requests.each do |request| %>
+      <tr>
+        <td><%= request.tool_id %></td>
+        <td><%= request.start_date  %></td>
+        <td><%= request.notes %></td>
+        <td><%= request.status %></td>
+        <td><%= link_to 'Edit', edit_request_path(request) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

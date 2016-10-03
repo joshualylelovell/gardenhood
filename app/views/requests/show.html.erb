@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @tool.name %>
+</p>
+
+<p>
+  <strong>Details:</strong>
+  <%= @tool.details %>
+</p>
+
+<p>
+  <strong>Borrowing Start Date:</strong>
+  <%= @request.start_date %>
+</p>
+
+<p>
+  <strong>Borrowing End Date:</strong>
+  <%= @request.end_date %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @request.notes %>
+</p>
+
+<p>
+  <strong>Current Status:</strong>
+  <%= @request.status %>
+</p>
+
+<%= link_to 'Edit', edit_request_path(@request) %> |
+<%= link_to 'Back', tools_path %>

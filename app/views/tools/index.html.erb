@@ -16,7 +16,7 @@
       <tr>
         <td><%= tool.name %></td>
         <td><%= tool.details %></td>
-        <td><%= tool.requested %></td>
+        <td><%= link_to 'Request to borrow', new_request_path(tool: tool) %></td>
         <td><%= link_to 'Show', tool %></td>
         <%- if tool.gardener == current_gardener %>
           <td><%= link_to 'Edit', edit_tool_path(tool) %></td>
