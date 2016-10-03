@@ -1,0 +1,23 @@
+$(document).ready(function() {
+  // This uses masonry.js to prevent height
+  // change in cards other than accordion
+  // being opened
+  $('#cards').masonry({
+    itemSelector: '.card',
+    columnWidth: '.grid-sizer',
+    percentPosition: true
+  });
+})
+
+$(document).on('click', '.accordion-title', function() {
+  // Call masonry.js to adjust layout 250ms after
+  // accordion open or close
+  setTimeout(function(){
+    $('#cards').masonry({
+      itemSelector: '.card',
+      columnWidth: '.grid-sizer',
+      percentPosition: true
+    });
+  }, 250);
+
+})

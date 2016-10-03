@@ -5,16 +5,21 @@ $gh-green: #367c2b;
 #cards-page {
 
   #cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+
+    .grid-sizer {
+      width: 50%;
+      @media (max-width: 350px) {
+        width: 100%;
+      }
+    }
 
     .card {
       border: 2px solid black;
       border-radius: 10px;
       background: lightgray;
       width: 48%;
-      margin: 4px 0;
+      margin: 4px 1%;
+      float: left;
       display: flex;
       flex-direction: column;
       align-items: center;
