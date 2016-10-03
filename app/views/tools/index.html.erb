@@ -7,7 +7,6 @@
     <tr>
       <th>Name</th>
       <th>Details</th>
-      <th>Available</th>
       <th>Requested</th>
     </tr>
   </thead>
@@ -17,7 +16,6 @@
       <tr>
         <td><%= tool.name %></td>
         <td><%= tool.details %></td>
-        <td><%= tool.available %></td>
         <td><%= tool.requested %></td>
         <td><%= link_to 'Show', tool %></td>
         <%- if tool.gardener == current_gardener %>
