@@ -1,33 +1,41 @@
-<p id="notice"><%= notice %></p>
+<div id="cards">
+  <p id="notice"><%= notice %></p>
 
-<h1>Your Toolshed - Cards Test</h1>
+  <h1>Your Toolshed - Cards Test</h1>
 
 
-<div class='card'>
-  <img src="assets/mower.jpeg" alt="">
-</div>
+  <div class='card'>
+    <img src="assets/mower.jpeg" alt="">
+    <div class='details'>
+      <h4>Mower</h4>
+      <button>Edit</button>
+      <p><span class='emph'>Owner:</span> Justin</p>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Details</th>
-      <th>Requested</th>
-    </tr>
-  </thead>
+    </div>
+  </div>
 
-  <tbody>
+  <table>
+    <thead>
       <tr>
-        <td>Mower</td>
-        <td>This is a mower</td>
-        <td>True</td>
-        <td><a href="">Show</a></td>
-        <td><a href="">Edit</a></td>
-        <td><a href="">Destroy</a></td>
+        <th>Name</th>
+        <th>Details</th>
+        <th>Requested</th>
       </tr>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+        <tr>
+          <td>Mower</td>
+          <td>This is a mower</td>
+          <td>True</td>
+          <td><a href="">Show</a></td>
+          <td><a href="">Edit</a></td>
+          <td><a href="">Destroy</a></td>
+        </tr>
+    </tbody>
+  </table>
 
-<%= link_to 'New Tool', new_tool_path %>
+  <br>
+
+  <%= link_to 'New Tool', new_tool_path %>
+</div>
