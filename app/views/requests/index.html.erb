@@ -6,7 +6,7 @@
 <table>
   <thead>
     <tr>
-      <th>Tool</th>
+      <th>Tool You Want</th>
       <th>Requested Dates</th>
       <th>Notes</th>
       <th>Status</th>
@@ -40,7 +40,7 @@
 <table>
   <thead>
     <tr>
-      <th>Tool</th>
+      <th>Your Tool</th>
       <th>Requested Dates</th>
       <th>Notes</th>
       <th>Status</th>
@@ -49,20 +49,24 @@
   </thead>
 
   <tbody>
-      <% @tools.each do |tool| %>
-        <% @requests.each do |request| %>
-          <% if tool.id == request.tool_id %>
-            <%- if request.gardener != current_gardener %>
-              <tr>
-                  <td><%= tool.name %></td>
-                  <td><%= request.start_date.to_s + ' until ' + request.end_date.to_s  %></td>
-                  <td><%= request.notes %></td>
-                  <td><%= request.status %></td>
-                  <td><%= request.gardener_id %></td>
-              </tr>
+    <% @tools.each do |tool| %>
+      <% @requests.each do |request| %>
+        <% if tool.id == request.tool_id %>
+          <%- if request.gardener != current_gardener %>
+            <% @gardeners.each do |gardener| %>
+              <% if request.gardener_id == gardener.id %>
+                <tr>
+                    <td><%= tool.name %></td>
+                    <td><%= request.start_date.to_s + ' until ' + request.end_date.to_s  %></td>
+                    <td><%= request.notes %></td>
+                    <td><%= request.status %></td>
+                    <td><%= gardener.email %></td>
+                </tr>
+              <% end %>
             <% end -%>
           <% end %>
         <% end -%>
       <% end %>
+    <% end %>
   </tbody>
 </table>
