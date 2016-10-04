@@ -16,18 +16,22 @@
   </thead>
 
   <tbody>
-    <% @requests.each do |request| %>
-      <tr>
-        <%- if request.gardener == current_gardener %>
-          <td><%= request.tool_id %></td>
-          <td><%= request.start_date.to_s + ' until ' + request.end_date.to_s  %></td>
-          <td><%= request.notes %></td>
-          <td><%= request.status %></td>
-          <td><%= link_to 'Edit', edit_request_path(request) %></td>
-          <td><%= link_to 'Destroy', request, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% end -%>
-      </tr>
-    <% end %>
+    <% @tools_user.each do |tool| %>
+      <% @requests.each do |request| %>
+        <% if tool.id == request.tool_id %>
+          <%- if request.gardener == current_gardener %>
+            <tr>
+              <td><%= tool.name %></td>
+              <td><%= request.start_date.to_s + ' until ' + request.end_date.to_s  %></td>
+              <td><%= request.notes %></td>
+              <td><%= request.status %></td>
+              <td><%= link_to 'Edit', edit_request_path(request) %></td>
+              <td><%= link_to 'Destroy', request, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end -%>
+        <% end %>
+      <% end -%>
+    <% end -%>
   </tbody>
 </table>
 
@@ -45,16 +49,20 @@
   </thead>
 
   <tbody>
+      <% @tools.each do |tool| %>
         <% @requests.each do |request| %>
-          <%- if request.gardener != current_gardener %>
-            <tr>
-                <td><%= request.tool_id %></td>
-                <td><%= request.start_date.to_s + ' until ' + request.end_date.to_s  %></td>
-                <td><%= request.notes %></td>
-                <td><%= request.status %></td>
-                <td><%= request.gardener_id %></td>
-            </tr>
-          <% end -%>
-        <% end %>
+          <% if tool.id == request.tool_id %>
+            <%- if request.gardener != current_gardener %>
+              <tr>
+                  <td><%= tool.name %></td>
+                  <td><%= request.start_date.to_s + ' until ' + request.end_date.to_s  %></td>
+                  <td><%= request.notes %></td>
+                  <td><%= request.status %></td>
+                  <td><%= request.gardener_id %></td>
+              </tr>
+            <% end -%>
+          <% end %>
+        <% end -%>
+      <% end %>
   </tbody>
 </table>

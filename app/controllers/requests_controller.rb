@@ -5,7 +5,8 @@ class RequestsController < ApplicationController
 
   def index
     @requests = Request.order(created_at: :desc)
-    @tools = Tool.all
+    @tools = current_gardener.tools.order(created_at: :desc)
+    @tools_user = Tool.all
   end
 
   def show
