@@ -4,7 +4,8 @@ class RequestsController < ApplicationController
   before_action :set_request, only: [:show, :edit, :update, :destroy]
 
   def index
-    @requests = Request.all
+    @requests = Request.order(created_at: :desc)
+    @tools = Tool.all
   end
 
   def show

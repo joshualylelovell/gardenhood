@@ -1,7 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Your Requests</h1>
+<h1>YOUR REQUESTS</h1>
 
+<h2>Tools You've Requested:</h2>
 <table>
   <thead>
     <tr>
@@ -17,15 +18,43 @@
   <tbody>
     <% @requests.each do |request| %>
       <tr>
-        <td><%= request.tool_id %></td>
-        <td><%= request.start_date.to_s + ' until ' + request.end_date.to_s  %></td>
-        <td><%= request.notes %></td>
-        <td><%= request.status %></td>
-        <td><%= link_to 'Edit', edit_request_path(request) %></td>
-        <td><%= link_to 'Destroy', request, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <%- if request.gardener == current_gardener %>
+          <td><%= request.tool_id %></td>
+          <td><%= request.start_date.to_s + ' until ' + request.end_date.to_s  %></td>
+          <td><%= request.notes %></td>
+          <td><%= request.status %></td>
+          <td><%= link_to 'Edit', edit_request_path(request) %></td>
+          <td><%= link_to 'Destroy', request, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end -%>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
+<h2>Requests Made for Your Tools:</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tool</th>
+      <th>Requested Dates</th>
+      <th>Notes</th>
+      <th>Status</th>
+      <th>Requestor</th>
+    </tr>
+  </thead>
+
+  <tbody>
+        <% @requests.each do |request| %>
+          <%- if request.gardener != current_gardener %>
+            <tr>
+                <td><%= request.tool_id %></td>
+                <td><%= request.start_date.to_s + ' until ' + request.end_date.to_s  %></td>
+                <td><%= request.notes %></td>
+                <td><%= request.status %></td>
+                <td><%= request.gardener_id %></td>
+            </tr>
+          <% end -%>
+        <% end %>
+  </tbody>
+</table>
