@@ -18,6 +18,11 @@ $(document).on('click', '.accordion-title', function() {
       columnWidth: '.grid-sizer',
       percentPosition: true
     });
-  }, 250);
+  }, 300);
+
+
 
 })
+
+// Need to implement click listene and if/else or switch case
+// to change border-radius of .accordion-title and .accordion-content
