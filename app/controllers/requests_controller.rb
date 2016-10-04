@@ -8,6 +8,7 @@ class RequestsController < ApplicationController
     @tools = current_gardener.tools.order(created_at: :desc)
     @tools_user = Tool.all
     @gardeners = Gardener.all
+
   end
 
   def show
