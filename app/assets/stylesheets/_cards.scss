@@ -24,21 +24,6 @@ $gh-green: #367c2b;
       flex-direction: column;
       align-items: center;
 
-      .accordion-title {
-        border-radius: 8px;
-        border: none;
-        // border-top-left-radius: 10px;
-        // border-top-right-radius: 10px;
-      }
-      .accordion-content {
-        // border-radius: 10px;
-        border-bottom-left-radius: 8px;
-        border-bottom-right-radius: 8px;
-        background: lightgray;
-        border: none;
-        border-top: 1px solid black;
-      }
-
       .details {
         height: 100%;
       }
@@ -60,7 +45,7 @@ $gh-green: #367c2b;
         padding: 0 2px;
         h4 {
           display: inline-block;
-          padding-right: 5px;
+          padding-bottom: 5px;
           margin: 0;
         }
         p {
@@ -78,5 +63,30 @@ $gh-green: #367c2b;
     }
 
   }
+
+  // Accordion Styling
+  .accordion-title {
+    padding: 0;
+    border-radius: 8px;
+    border: none;
+    color: black;
+  }
+  .accordion-title > div {
+    display: flex;
+  }
+
+  .accordion-content {
+    padding: 5px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    background: lightgray;
+    border: none;
+    border-top: 1px solid black;
+
+    p {
+      margin: 0;
+    }
+  }
+
 }
 
