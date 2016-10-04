@@ -20,9 +20,13 @@ $(document).on('click', '.accordion-title', function() {
     });
   }, 300);
 
-
+  // Loop through each accordion-title and check if expanded
+  // Set border-radius values accordingly
+   // This prevents overflow on rounded tool cards.
+  $('.accordion-title').each(function() {
+    $(this).attr("aria-expanded") == "true" ?
+    setTimeout(() => { $(this).css({ "border-bottom-left-radius": "0", "border-bottom-right-radius": "0" }); }, 45) :
+    setTimeout(() => { $(this).css({ "border-bottom-left-radius": "8px", "border-bottom-right-radius": "8px" }); }, 200)
+  });
 
 })
-
-// Need to implement click listene and if/else or switch case
-// to change border-radius of .accordion-title and .accordion-content
