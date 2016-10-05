@@ -8,6 +8,9 @@
       <th>Name</th>
       <th>Details</th>
       <th>Requested</th>
+      <th>Show</th>
+      <th>Edit</th>
+      <th>Delete</th>
     </tr>
   </thead>
 
@@ -16,12 +19,16 @@
       <tr>
         <td><%= tool.name %></td>
         <td><%= tool.details %></td>
-        <td><%= tool.requested %></td>
+          <%- if tool.gardener != current_gardener %>
+            <td><%= link_to 'Request to borrow', new_request_path(tool: tool) %></td>
+          <% else %>
+            <td> </td>
+          <% end -%>
         <td><%= link_to 'Show', tool %></td>
-        <%- if tool.gardener == current_gardener %>
-          <td><%= link_to 'Edit', edit_tool_path(tool) %></td>
-          <td><%= link_to 'Destroy', tool, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% end -%>
+          <%- if tool.gardener == current_gardener %>
+            <td><%= link_to 'Edit', edit_tool_path(tool) %></td>
+            <td><%= link_to 'Destroy', tool, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% end -%>
       </tr>
     <% end %>
   </tbody>
