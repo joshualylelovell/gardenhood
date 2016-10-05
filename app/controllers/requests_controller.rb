@@ -68,4 +68,17 @@ class RequestsController < ApplicationController
     params.require(:request).permit(:start_date, :end_date, :notes, :status, :tool_id)
   end
 
+  def toggle_status (new_status)
+    @request.status = new_status
+    respond_to do |format|
+      if @request.save
+        format.html { redirect_to requests_path, notice: 'Your request has been updated.' }
+        format.json { render :show, status: :ok, location: @request }
+      else
+        format.html { render :index, notice: 'Request update failed.' }
+        format.json { render json: @request.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
 end
