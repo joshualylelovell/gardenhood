@@ -63,3 +63,10 @@ GENERAL
     display: none;
   }
 }
+
+.off-canvas-wrapper-inner {
+  height: 100%;
+  .off-canvas-content {
+    background: inherit;
+  }
+}
