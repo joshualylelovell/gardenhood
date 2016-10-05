@@ -1,4 +1,4 @@
-<div id="cards-page">
+<div id="cards-page"
 <p id="notice"><%= notice %></p>
 
 <h1>Your Toolshed</h1>
@@ -15,8 +15,14 @@
         <div>
           <img src="assets/mower.jpeg" alt="">
           <div class='item-heading'>
-            <h4><%= tool.name %></h4>
-            <p><span class='emph'>Owner:</span> <%= tool.gardener %></p>
+            <h4><%= tool.name.titleize %></h4>
+            <br>
+            <span class='emph'>Owner: </span
+              <% @gardeners.each do |gardener| %>
+                <% if tool.gardener == gardener %>
+                  <span><%= gardener.email %></span>
+                <% end %>
+              <% end %>
           </div>
         </div>
       </a>

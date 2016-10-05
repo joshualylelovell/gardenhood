@@ -4,6 +4,7 @@ class ToolsController < ApplicationController
 
   def index
     @tools = Tool.order(created_at: :desc)
+    @gardeners = Gardener.all
   end
 
   def show
