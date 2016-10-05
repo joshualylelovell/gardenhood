@@ -29,4 +29,5 @@ $(document).on('click', '.accordion-title', function() {
     setTimeout(() => { $(this).css({ "border-bottom-left-radius": "8px", "border-bottom-right-radius": "8px" }); }, 200)
   });
 
+
 })
