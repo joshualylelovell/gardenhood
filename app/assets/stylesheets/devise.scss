@@ -67,12 +67,12 @@ $gh-green: #367c2b;
   font-size: 12px;
   display: inline;
 }
-.form-toggle {
+.form .message a {
   color: #4CAF50;
   text-decoration: none;
-  display: inline;
-  font-size: 12px;
-  cursor: pointer;
+}
+.form-toggle:hover {
+  color: #4CAF50;
 }
 .form .gardener-register {
   display: none;
