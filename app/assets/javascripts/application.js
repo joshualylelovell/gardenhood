@@ -11,11 +11,9 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery.turbolinks
 //= require jquery_ujs
 //= require_tree .
 //= require ./masonry.min.js
-//= require turbolinks
 
 //= require foundation
 
