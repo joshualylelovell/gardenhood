@@ -21,8 +21,8 @@
 
 $(function(){ $(document).foundation(); });
 
-
-$('.message a').click(function(){
-  console.log("CLICKED!");
-   $('.form').animate({height: "toggle", opacity: "toggle"}, "slow");
-});
+$(document).ready(function() {
+  $('.form-toggle').click(function(){
+     $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
+  });
+})
