@@ -1,0 +1,40 @@
+/* ************************************
+NAVBAR
+************************************ */
+
+$gh-yellow: #ffde00;
+$gh-green: #367c2b;
+
+#gh-nav {
+  background-color: $gh-yellow;
+  color: $gh-green;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+#site-logo {
+  color: $gh-green;
+  background-color: $gh-yellow;
+  line-height: 80px;
+  padding-top: 0;
+  padding-bottom: 0;
+  font-size: 3em;
+}
+
+#site-logo:hover {
+  color: $gh-yellow;
+  background-color: $gh-green;
+}
+
+.menu > li > a {
+  color: $gh-green;
+  background-color: $gh-yellow;
+  line-height: 80px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.menu > li > a:hover {
+  color: $gh-yellow;
+  background-color: $gh-green;
+}

@@ -1,39 +1,57 @@
+<div id="cards-page">
 <p id="notice"><%= notice %></p>
 
 <h1>Your Toolshed</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Details</th>
-      <th>Requested</th>
-      <th>Show</th>
-      <th>Edit</th>
-      <th>Delete</th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @tools.each do |tool| %>
-      <tr>
-        <td><%= tool.name %></td>
-        <td><%= tool.details %></td>
-          <%- if tool.gardener != current_gardener %>
-            <td><%= link_to 'Request to borrow', new_request_path(tool: tool) %></td>
-          <% else %>
-            <td> </td>
-          <% end -%>
-        <td><%= link_to 'Show', tool %></td>
-          <%- if tool.gardener == current_gardener %>
-            <td><%= link_to 'Edit', edit_tool_path(tool) %></td>
-            <td><%= link_to 'Destroy', tool, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          <% end -%>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div id="cards" class='clearfix'>
+  <div class='grid-sizer'></div>
+
+  <% @tools.each do |tool| %>
+
+  <div class="accordion card" data-accordion data-allow-all-closed="true">
+    <div class="accordion-item" data-accordion-item>
+      <a href="" class="accordion-title">
+        <div>
+          <img src="assets/mower.jpeg" alt="">
+          <div class='item-heading'>
+            <h4><%= tool.name.titleize %></h4>
+            <br>
+            <span class='emph'>Owner: </span
+              <% @gardeners.each do |gardener| %>
+                <% if tool.gardener == gardener %>
+                  <span><%= gardener.email %></span>
+                <% end %>
+              <% end %>
+          </div>
+        </div>
+      </a>
+      <div class="accordion-content" data-tab-content>
+        <div class="item-details">
+          <h6>Details:</h6>
+          <p><%= tool.details %></p>
+        </div>
+        <div class="item-links">
+
+          <% if tool.gardener != current_gardener %>
+            <%= link_to 'Request to borrow', new_request_path(tool: tool) %>
+          <% end %>
+
+          <% if tool.gardener == current_gardener %>
+            <%= link_to 'Edit', edit_tool_path(tool) %>
+            <%= link_to 'Destroy', tool, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <% end %>
+</div>
+
 
 <br>
 
 <%= link_to 'New Tool', new_tool_path %>
+
+</div>
