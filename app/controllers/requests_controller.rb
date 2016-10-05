@@ -68,8 +68,27 @@ class RequestsController < ApplicationController
     params.require(:request).permit(:start_date, :end_date, :notes, :status, :tool_id)
   end
 
-  def toggle_status (new_status)
-    @request.status = new_status
+  def set_approved
+    @request = Request.find(params[:id])
+    puts "request:"
+    puts @request
+    @request.status = "approved"
+    respond_to do |format|
+      if @request.save
+        format.html { redirect_to requests_path, notice: 'Your request has been updated.' }
+        format.json { render :show, status: :ok, location: @request }
+      else
+        format.html { render :index, notice: 'Request update failed.' }
+        format.json { render json: @request.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def set_denied
+    @request = Request.find(params[:id])
+    puts "request:"
+    puts @request
+    @request.status = "denied"
     respond_to do |format|
       if @request.save
         format.html { redirect_to requests_path, notice: 'Your request has been updated.' }

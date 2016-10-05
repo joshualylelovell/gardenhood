@@ -14,7 +14,8 @@ Rails.application.routes.draw do
 
   resources :requests
 
-  get 'requests/:id/toggle_status', to: 'requests#toggle_status', as: 'toggle'
+  get 'requests/:id/set_approved', to: 'requests#set_approved', as: 'approved'
+  get 'requests/:id/set_denied', to: 'requests#set_denied', as: 'denied'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
