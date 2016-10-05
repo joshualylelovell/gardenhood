@@ -11,18 +11,39 @@
     <%= csrf_meta_tags %>
   </head>
 
-  <header>
-
-      <%= render 'layouts/navbar' %>
-
-  </header>
-
   <body>
+    <div class="off-canvas-wrapper">
+      <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
 
-    <div class="wrapper"
+        <div class="off-canvas position-left" id="mobile-menu" data-off-canvas>
 
-      <%= yield %>
+            <%= render 'layouts/mobile-nav' %>
 
+        </div>
+
+        <div class="off-canvas-content" data-off-canvas-content>
+
+          <div class="title-bar" id="gh-title-bar">
+            <div class="title-bar-left">
+              <button id="gh-menu-icon" class="menu-icon" type="button" data-open="mobile-menu"></button>
+              <span class="title-bar-title"><%= link_to 'GARDENHOOD', home_path%></span>
+            </div>
+          </div>
+
+          <header>
+
+              <%= render 'layouts/navbar' %>
+
+          </header>
+
+
+          <div class="wrapper"
+
+            <%= yield %>
+
+          </div>
+        </div>
+      </div>
     </div>
 
   </body>

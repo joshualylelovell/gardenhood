@@ -38,3 +38,48 @@ $gh-green: #367c2b;
   color: $gh-yellow;
   background-color: $gh-green;
 }
+
+/* ************************************
+MOBILE-NAV
+************************************ */
+
+.off-canvas-wrapper, #mobile-menu {
+  height: 100vh;
+  background-color: $gh-green;
+}
+
+#mobile-menu a {
+  color: $gh-yellow;
+}
+
+#mobile-menu a:hover {
+  color: $gh-green;
+  background-color: $gh-yellow;
+}
+
+#mobile-menu li {
+  list-style: none;
+}
+
+.title-bar {
+  background-color: $gh-yellow;
+}
+
+.title-bar a {
+  color: $gh-green;
+}
+
+.title-bar a:hover {
+  color: $gh-yellow;
+  background-color: $gh-green;
+}
+
+#gh-mobile-title {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+#gh-menu-icon::after {
+  background: $gh-green;
+  box-shadow: 0 7px 0 $gh-green, 0 14px 0 $gh-green;
+}
