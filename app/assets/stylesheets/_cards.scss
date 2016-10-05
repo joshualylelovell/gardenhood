@@ -5,22 +5,24 @@ $gh-green: #367c2b;
 #cards-page {
 
   #cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+
+    .grid-sizer {
+      width: 50%;
+      @media (max-width: 350px) {
+        width: 100%;
+      }
+    }
 
     .card {
       border: 2px solid black;
       border-radius: 10px;
       background: lightgray;
       width: 48%;
-      margin: 4px 0;
+      margin: 4px 1%;
+      float: left;
       display: flex;
+      flex-direction: column;
       align-items: center;
-
-      .details {
-        height: 100%;
-      }
 
       img {
         height: 100px;
@@ -34,12 +36,17 @@ $gh-green: #367c2b;
         }
       }
 
-      .details {
+      .item-heading {
         display: inline-block;
         padding: 0 2px;
+        height: 100%;
         h4 {
           display: inline-block;
-          padding-right: 5px;
+          padding-bottom: 5px;
+          margin: 0;
+        }
+        p {
+          margin: 0;
         }
       }
 
@@ -53,5 +60,47 @@ $gh-green: #367c2b;
     }
 
   }
+
+  // Accordion Styling
+  .accordion-title {
+    padding: 0;
+    border-radius: 8px;
+    border: none;
+    color: black;
+  }
+  .accordion-title > div {
+    display: flex;
+  }
+
+  .accordion-content {
+    padding: 5px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    background: lightgray;
+    border: none;
+    border-top: 1px solid black;
+
+    // display: flex;
+
+    .item-details {
+      width: 80%;
+      p {
+        margin: 0;
+      }
+    }
+
+    .item-links {
+      width: 20%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: flex-end;
+      a {
+        font-size: 12px;
+      }
+    }
+
+  }
+
 }
 

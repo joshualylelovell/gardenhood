@@ -37,3 +37,10 @@ GENERAL
 }
 
 
+.accordion-title::before {
+  content: none;
+}
+
+.is-active > .accordion-title::before {
+  content: none;
+}

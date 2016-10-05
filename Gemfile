@@ -31,6 +31,8 @@ gem 'devise'
 
 gem 'foundation-rails'
 
+gem 'jquery-turbolinks'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
