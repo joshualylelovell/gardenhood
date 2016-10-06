@@ -1,6 +1,7 @@
 class ToolsController < ApplicationController
   before_action :authenticate_gardener!
   before_action :set_tool, only: [:edit, :update, :destroy]
+  before_action :set_s3_direct_post, only: [:new, :edit, :create, :update]
 
   def index
     @tools = Tool.order(created_at: :desc)
@@ -63,5 +64,10 @@ class ToolsController < ApplicationController
   # Never trust parameters from the scary internet, only allow the white list through.
   def tool_params
     params.require(:tool).permit(:name, :details, :available, :requested)
+  end
+
+  # Set S3 Post
+  def set_s3_direct_post
+    @s3_direct_post = S3_BUCKET.presigned_post(key: "uploads/tools/#{SecureRandom.uuid}/${filename}", success_action_status: '201', acl: 'public-read')
   end
 end
