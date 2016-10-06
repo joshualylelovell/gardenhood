@@ -7,6 +7,22 @@ $(document).ready(function() {
     columnWidth: '.grid-sizer',
     percentPosition: true
   });
+
+  setTimeout(function(){
+    $('#cards').masonry({
+      itemSelector: '.card',
+      columnWidth: '.grid-sizer',
+      percentPosition: true
+    });
+  }, 100);
+
+  setTimeout(function(){
+    $('#cards').masonry({
+      itemSelector: '.card',
+      columnWidth: '.grid-sizer',
+      percentPosition: true
+    });
+  }, 200);
 })
 
 $(document).on('click', '.accordion-title', function() {
