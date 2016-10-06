@@ -6,6 +6,14 @@ class ToolsController < ApplicationController
   def index
     @tools = Tool.order(created_at: :desc)
     @gardeners = Gardener.all
+    @my_tools = current_gardener.tools.order(created_at: :desc)
+
+    if params[:search]
+      @tools = Tool.search(params[:search]).order(created_at: :desc)
+    else
+      @tools = Tool.all.order(created_at: :desc)
+    end
+
   end
 
   def show
