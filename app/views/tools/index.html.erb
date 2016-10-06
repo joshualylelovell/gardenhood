@@ -1,8 +1,25 @@
 <div id="cards-page">
 <p id="notice"><%= notice %></p>
 
-<h1 class="static-text">The Toolshed</h1>
 
+<div class="row">
+  <div class="medium-6 large-6 columns">
+
+    <h1 class="static-text">The Toolshed</h1>
+
+    <%= form_tag(tools_path, :method => "get", id: "search-form") do %>
+      <%= text_field_tag :search, params[:search], placeholder: "Search for tools" %>
+      <%= submit_tag "Search" %>
+    <% end %>
+
+    <% if @tools.present? %>
+      <%= link_to 'Reset', tools_path, class: "success button", id: "gh-success" %>
+    <% else %>
+      <p>There are no tools containing the term(s) <%= params[:search] %>.</p>
+      <%= link_to 'Reset', tools_path, class: "success button", id: "gh-success" %>
+    <% end %>
+  </div>
+</div>
 
 <div id="cards" class='clearfix'>
   <div class='grid-sizer'></div>
