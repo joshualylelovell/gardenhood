@@ -20,6 +20,8 @@ class ToolsController < ApplicationController
   end
 
   def create
+    puts "TOOL PARAMS:"
+    puts tool_params.inspect
     @tool = Tool.new(tool_params)
     @tool.gardener = current_gardener
     respond_to do |format|
@@ -63,7 +65,7 @@ class ToolsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def tool_params
-    params.require(:tool).permit(:name, :details, :available, :requested)
+    params.require(:tool).permit(:name, :details, :image, :available, :requested)
   end
 
   # Set S3 Post

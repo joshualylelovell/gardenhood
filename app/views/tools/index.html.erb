@@ -13,6 +13,11 @@
     <div class="accordion-item" data-accordion-item>
       <a href="" class="accordion-title">
         <div>
+          <% if tool.image %>
+            <%= image_tag tool.image %>
+          <% else %>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg">
+          <% end %>
 
           <div class='item-heading'>
             <h4><%= tool.name.titleize %></h4>
