@@ -1,7 +1,7 @@
 <div id="cards-page">
 <p id="notice"><%= notice %></p>
 
-<h1>Your Toolshed</h1>
+<h1 class="static-text">The Toolshed</h1>
 
 
 <div id="cards" class='clearfix'>
@@ -34,12 +34,12 @@
         <div class="item-links">
 
           <% if tool.gardener != current_gardener %>
-            <%= link_to 'Request to borrow', new_request_path(tool: tool) %>
+            <%= link_to 'Request to borrow', new_request_path(tool: tool), class: "success button", id: "gh-success" %>
           <% end %>
 
           <% if tool.gardener == current_gardener %>
-            <%= link_to 'Edit', edit_tool_path(tool) %>
-            <%= link_to 'Destroy', tool, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <%= link_to 'Edit', edit_tool_path(tool), class: "success button", id: "gh-success" %>
+            <%= link_to 'Destroy', tool, method: :delete, data: { confirm: 'Are you sure?' }, class: "success button", id: "gh-success" %>
           <% end %>
         </div>
       </div>
@@ -52,6 +52,6 @@
 
 <br>
 
-<%= link_to 'New Tool', new_tool_path %>
+<%= link_to 'New Tool', new_tool_path, class: "success button", id: "gh-success" %>
 
 </div>
