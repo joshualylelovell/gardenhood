@@ -8,12 +8,23 @@
 
 puts "Running seeds!"
 
+Request.delete_all()
 Tool.delete_all()
 Gardener.delete_all()
 
 gardeners = []
 tools = []
-emails = ["joe@ga.co", "sue@ga.co", "jim@dundermifflininfinity.com", "creed@creedthoughts.creedthoughts", "me@yeah.com"]
+password = "test1234"
+users = [
+  { email: "joe@ga.co",                         username: "joehacker" },
+  { email: "sue@ga.co",                         username: "sueshiroll"},
+  { email: "jim@dundermifflininfinity.com",     username: "tuna" },
+  { email: "creed@creedthoughts.creedthoughts", username: "creed"},
+  { email: "me@yeah.com",                       username: "me" }
+]
+users.each do |user|
+  user[:password] = password
+end
 
 tool_seeds = [
   {
@@ -44,10 +55,7 @@ tool_seeds = [
 ]
 
 5.times do |i|
-  gardeners << Gardener.create!({
-    email: emails[i],
-    password: "test1234"
-  })
+  gardeners << Gardener.create!(users[i])
   new_tool = Tool.new(tool_seeds[i])
   new_tool.gardener = gardeners[i]
   tools << new_tool.save

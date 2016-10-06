@@ -34,7 +34,7 @@
             <% if tool.image %>
               <%= image_tag tool.image %>
             <% else %>
-              <img src="https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg">
+              <%= image_tag "no-image.svg" %>
             <% end %>
           </div>
           <div class='item-heading'>
