@@ -4,3 +4,23 @@
 
 $gh-yellow: #ffde00;
 $gh-green: #367c2b;
+
+.search-wrapper {
+  width: 100%;
+  padding: 0 1%;
+  #search-form {
+    display: inline-block;
+    width: calc(100% - 72px);
+    margin: 0;
+    #search {
+      display: inline-block;
+      width: calc(100% - 80px);
+      margin: 0 1px 0 0;
+      vertical-align: bottom;
+    }
+  }
+  .search-button {
+    margin: 0;
+    height: 39px;
+  }
+}
