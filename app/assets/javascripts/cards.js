@@ -40,10 +40,20 @@ $(document).on('click', '.accordion-title', function() {
   // Set border-radius values accordingly
    // This prevents overflow on rounded tool cards.
   $('.accordion-title').each(function() {
-    $(this).attr("aria-expanded") == "true" ?
-    setTimeout(() => { $(this).css({ "border-bottom-left-radius": "0", "border-bottom-right-radius": "0" }); }, 45) :
-    setTimeout(() => { $(this).css({ "border-bottom-left-radius": "8px", "border-bottom-right-radius": "8px" }); }, 200)
+    // Set thisAccordion to prevent "this" from being altered by function scope
+    var thisAccordion = $(this);
+    if ($(this).attr("aria-expanded") == "true") {
+      setTimeout(function(){
+        $(thisAccordion).css({ "border-bottom-left-radius": "0", "border-bottom-right-radius": "0" });
+      }, 45);
+    } else {
+      setTimeout(function(){
+        $(thisAccordion).css({ "border-bottom-left-radius": "8px", "border-bottom-right-radius": "8px" });
+      }, 200);
+    }
+    // THESE ARROW FUNCTIONS CAUSE PRECOMPILING ISSUES
+    // $(this).attr("aria-expanded") == "true" ?
+    // setTimeout(() => { $(this).css({ "border-bottom-left-radius": "0", "border-bottom-right-radius": "0" }); }, 45) :
+    // setTimeout(() => { $(this).css({ "border-bottom-left-radius": "8px", "border-bottom-right-radius": "8px" }); }, 200)
   });
-
-
 })
