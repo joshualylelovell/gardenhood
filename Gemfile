@@ -33,6 +33,9 @@ gem 'foundation-rails'
 
 gem 'jquery-turbolinks'
 
+# Amazon Web Services S3
+gem 'aws-sdk', '~> 2'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
