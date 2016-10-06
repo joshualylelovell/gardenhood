@@ -20,7 +20,7 @@
             <span class='emph'>Owner: </span
               <% @gardeners.each do |gardener| %>
                 <% if tool.gardener == gardener %>
-                  <span><%= gardener.email %></span>
+                  <span><%= gardener.username %></span>
                 <% end %>
               <% end %>
           </div>
