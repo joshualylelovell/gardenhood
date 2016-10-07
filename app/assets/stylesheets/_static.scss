@@ -7,7 +7,7 @@ $gh-green: #367c2b;
 
 #gh-static-wrapper {
   height: 100vh;
-  background: url("lawn_mower.jpeg") no-repeat center center fixed;
+  background: url(asset-path("lawn_mower.jpeg")) no-repeat center center fixed;
   background-size: cover;
   background-color: $gh-green;
   margin: 0;
