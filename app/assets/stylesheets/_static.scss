@@ -50,3 +50,26 @@ $gh-green: #367c2b;
   color: $gh-yellow;
   font-size: 1.8em;
 }
+
+@media (max-width: 890px) {
+  #marquee {
+    margin: 5px;
+  }
+
+  #marquee > h1 {
+    font-size: 3.5em;
+  }
+
+  #marquee > h3 {
+    font-size: 2em;
+  }
+
+  #marquee > h2 {
+    font-size: 2em;
+  }
+
+  #marquee > h4 {
+    font-size: 1em;
+  }
+
+}
