@@ -1,3 +1,44 @@
 // Place all the styles related to the Requests controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.request-accordion {
+  width: 98%;
+  margin: 0 1%;
+  .accordion-title {
+    width: 100%;
+    padding: 5px 0;
+    .request-accordion-head {
+      width: 100%;
+      div {
+        display: inline-block;
+        width: 19%;
+        margin: 0 auto;
+        text-align: center;
+        color: black;
+        font-weight: bold;
+        vertical-align: middle;
+      }
+    }
+  }
+  .accordion-content {
+    padding: 0;
+    div {
+      font-size: 12px;
+      display: inline-block;
+      width: 19%;
+      margin: 0 auto;
+      text-align: center;
+      color: black;
+      vertical-align: middle;
+    }
+  }
+}
+
+#request-table-wrap {
+  table {
+    width: 98%;
+    margin: 0 1%;
+    border-radius: 10px;
+  }
+}

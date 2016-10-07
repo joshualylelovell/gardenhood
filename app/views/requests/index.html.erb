@@ -1,77 +1,78 @@
-<p id="notice"><%= notice %></p>
+  <p id="notice"><%= notice %></p>
+<div id="request-table-wrap">
+  <h1 class="static-text">YOUR REQUESTS</h1>
 
-<h1 class="static-text">YOUR REQUESTS</h1>
+  <h2 class="static-text">Tools You've Requested:</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Tool You Want</th>
+        <th>Requested Dates</th>
+        <th>Notes</th>
+        <th>Status</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
 
-<h2 class="static-text">Tools You've Requested:</h2>
-<table>
-  <thead>
-    <tr>
-      <th>Tool You Want</th>
-      <th>Requested Dates</th>
-      <th>Notes</th>
-      <th>Status</th>
-      <th>Edit</th>
-      <th>Delete</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @tools_user.each do |tool| %>
-      <% @requests.each do |request| %>
-        <% if tool.id == request.tool_id %>
-          <%- if request.gardener == current_gardener %>
-            <tr>
-              <td><%= tool.name %></td>
-              <td><%= request.start_date.to_s + ' until ' + request.end_date.to_s  %></td>
-              <td><%= request.notes %></td>
-              <td><%= request.status %></td>
-              <td><%= link_to 'Edit', edit_request_path(request) %></td>
-              <td><%= link_to 'Destroy', request, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-            </tr>
-          <% end -%>
-        <% end %>
+    <tbody>
+      <% @tools_user.each do |tool| %>
+        <% @requests.each do |request| %>
+          <% if tool.id == request.tool_id %>
+            <%- if request.gardener == current_gardener %>
+              <tr>
+                <td><%= tool.name %></td>
+                <td><%= request.start_date.to_s + ' until ' + request.end_date.to_s  %></td>
+                <td><%= request.notes %></td>
+                <td><%= request.status %></td>
+                <td><%= link_to 'Edit', edit_request_path(request) %></td>
+                <td><%= link_to 'Destroy', request, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              </tr>
+            <% end -%>
+          <% end %>
+        <% end -%>
       <% end -%>
-    <% end -%>
-  </tbody>
-</table>
+    </tbody>
+  </table>
 
-<h2 class="static-text">Requests Made for Your Tools:</h2>
+  <h2 class="static-text">Requests Made for Your Tools:</h2>
 
-<table>
-  <thead>
-    <tr>
-      <th>Your Tool</th>
-      <th>Requested Dates</th>
-      <th>Notes</th>
-      <th>Status</th>
-      <th>Requestor</th>
-    </tr>
-  </thead>
+  <table>
+    <thead>
+      <tr>
+        <th>Your Tool</th>
+        <th>Requested Dates</th>
+        <th>Notes</th>
+        <th>Status</th>
+        <th>Requestor</th>
+      </tr>
+    </thead>
 
-  <tbody>
-    <% @tools.each do |tool| %>
-      <% @requests.each do |request| %>
-        <% if tool.id == request.tool_id %>
-          <% if request.gardener != current_gardener %>
-            <% @gardeners.each do |gardener| %>
-              <% if request.gardener_id == gardener.id %>
-                <tr>
-                  <td><%= tool.name %></td>
-                  <td><%= request.start_date.to_s + ' until ' + request.end_date.to_s  %></td>
-                  <td><%= request.notes %></td>
-                  <% if request.status == "pending" %>
-                    <td><%= link_to 'Approve', "/requests/#{request.id}/set_approved" %> <span> OR </span>
-                    <%= link_to 'Deny', "/requests/#{request.id}/set_denied" %></td>
-                  <% else %>
-                    <td><%= request.status %></td>
-                  <% end %>
-                  <td><%= gardener.email %></td>
-                </tr>
+    <tbody>
+      <% @tools.each do |tool| %>
+        <% @requests.each do |request| %>
+          <% if tool.id == request.tool_id %>
+            <% if request.gardener != current_gardener %>
+              <% @gardeners.each do |gardener| %>
+                <% if request.gardener_id == gardener.id %>
+                  <tr>
+                    <td><%= tool.name %></td>
+                    <td><%= request.start_date.to_s + ' until ' + request.end_date.to_s  %></td>
+                    <td><%= request.notes %></td>
+                    <% if request.status == "pending" %>
+                      <td><%= link_to 'Approve', "/requests/#{request.id}/set_approved" %> <span> OR </span>
+                      <%= link_to 'Deny', "/requests/#{request.id}/set_denied" %></td>
+                    <% else %>
+                      <td><%= request.status %></td>
+                    <% end %>
+                    <td><%= gardener.email %></td>
+                  </tr>
+                <% end %>
               <% end %>
             <% end %>
           <% end %>
         <% end %>
       <% end %>
-    <% end %>
-  </tbody>
-</table>
+    </tbody>
+  </table>
+</div>
