@@ -5,6 +5,12 @@ NAVBAR
 $gh-yellow: #ffde00;
 $gh-green: #367c2b;
 
+@media (max-width: 948px){
+  .nav-desktop {
+    display: none;
+  }
+}
+
 #gh-nav {
   background-color: $gh-yellow;
   color: $gh-green;
@@ -47,8 +53,14 @@ $gh-green: #367c2b;
 MOBILE-NAV
 ************************************ */
 
+@media (min-width: 949px) {
+  #gh-title-bar {
+    display: none;
+  }
+}
+
 .off-canvas-wrapper, #mobile-menu {
-  height: 100vh;
+  // height: 100vh;
   background-color: $gh-green;
 }
 

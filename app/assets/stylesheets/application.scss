@@ -52,18 +52,6 @@ GENERAL
     clear: both;
 }
 
-@media (max-width: 950px){
-  .nav-desktop {
-    display: none;
-  }
-}
-
-@media (min-width: 949px) {
-  #gh-title-bar {
-    display: none;
-  }
-}
-
 .off-canvas-wrapper-inner {
   height: 100%;
   .off-canvas-content {
