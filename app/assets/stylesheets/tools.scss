@@ -11,6 +11,7 @@ $gh-green: #367c2b;
   margin-bottom: 5px;
   h1 {
     margin: 0;
+    display: inline-block;
   }
   #search-form {
     display: inline-block;
@@ -28,6 +29,15 @@ $gh-green: #367c2b;
   .search-button {
     margin: 0;
     height: 39px;
+  }
+  p {
+    color: white;
+    display: inline-block;
+    font-size: 12px;
+    margin-left: 10px;
+    span {
+      font-weight: 700;
+    }
   }
 }
 
