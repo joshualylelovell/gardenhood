@@ -1,6 +1,11 @@
-<div class="row">
-  <div class="medium-6 medium-offset-2 large-6 large-offset-2 columns">
+<div>
+  <div class="form">
+    <h4> New request for: </h4>
+    <h4 id="requested-tool"><%= @request.tool.name %></h4>
+
     <%= form_for(@request) do |f| %>
+
+
       <% if @request.errors.any? %>
         <div id="error_explanation">
           <h2><%= pluralize(@request.errors.count, "error") %> prohibited this request from being processed:</h2>
@@ -13,25 +18,26 @@
         </div>
       <% end %>
 
-      <div class="field">
-        <%= f.label :tool_id %><br>
+      <div class="field" id="hidden-id">
+        <%= f.label :tool_id, class: "static-text" %>
         <%= f.text_field :tool_id %>
       </div>
       <div class="field">
-        <%= f.label :start_date %><br>
-        <%= f.date_field :start_date %>
+        <%= f.label :start_date, class: "static-text" %>
+        <%= f.date_field :start_date, id: "start_date_form" %>
       </div>
       <div class="field">
-        <%= f.label :end_date %><br>
-        <%= f.date_field :end_date %>
+        <%= f.label :end_date, class: "static-text" %>
+        <%= f.date_field :end_date, id: "end_date_form" %>
       </div>
       <div class="field">
-        <%= f.label :notes %><br>
-        <%= f.text_field :notes %>
+        <%= f.text_field :notes, placeholder: "Notes" %>
       </div>
       <div class="actions">
-        <%= f.submit %>
+        <%= button_tag "Submit", class: "success button search-button", id: "gh-success" %>
       </div>
     <% end %>
+
+    <%= link_to 'Back', tools_path, class: "success button search-button", id: "gh-success" %>
   </div>
 </div>

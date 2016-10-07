@@ -23,6 +23,8 @@ $gh-green: #367c2b;
 
 #marquee {
   margin: 150px;
+  background-color: rgba(1,177,30,.2);
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 
 #marquee > h1 {
