@@ -73,10 +73,11 @@ body {
 .progress {
   max-width: 600px;
   margin:    0.2em 0 0.2em 0;
+  height: 1.5rem;
 }
 
 .progress .bar {
-  height:  1.2em;
+  height:  1.5rem;
   padding-left: 0.2em;
   color:   white;
   display: none;

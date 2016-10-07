@@ -33,7 +33,7 @@ $(document).ready(function() {
       var submitButton = form.find('input[type="submit"]');
       var progressBar  = $("<div class='bar'></div>");
       var barContainer = $("<div class='progress'></div>").append(progressBar);
-      fileInput.after(barContainer);
+      $(".image-upload-wrap").after(barContainer);
       fileInput.fileupload({
         fileInput:       fileInput,
         url:             form.data('url'),
@@ -58,7 +58,7 @@ $(document).ready(function() {
         },
         done: function(e, data) {
           submitButton.prop('disabled', false);
-          progressBar.text("Uploading done");
+          progressBar.text("Upload complete!");
 
           // extract key and generate URL from response
           var key   = $(data.jqXHR.responseXML).find("Key").text();
