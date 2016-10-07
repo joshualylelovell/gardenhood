@@ -13,6 +13,12 @@ $gh-green: #367c2b;
   margin: 0;
   display: flex;
   align-items: flex-end;
+  @media (max-width: 948px) {
+    height: calc(100vh - 41px);
+  }
+  @media (min-width: 949px) {
+    height: calc(100vh - 80px);
+  }
 }
 
 #marquee {
