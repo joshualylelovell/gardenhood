@@ -8,6 +8,7 @@
 
             <%= devise_error_messages! %>
 
+          <h4>Sign Up</h4>
 
           <div class="field">
             <%= f.email_field :email, autofocus: true, placeholder: "email" %>
@@ -39,6 +40,8 @@
         <% end %>
 
         <%= form_for(resource, as: resource_name, url: session_path(resource_name), :html => {:class => 'new_gardener gardener-login'}) do |f| %>
+
+          <h4>Log In</h4>
 
           <div class="field">
             <%= f.email_field :email, autofocus: true, placeholder: "email" %>
