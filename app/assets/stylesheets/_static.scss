@@ -22,7 +22,7 @@ $gh-green: #367c2b;
 }
 
 #marquee {
-  margin: 150px;
+  margin: 150px 150px 100px 100px;
   // background-color: rgba(1,177,30,.2);
   // box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
@@ -59,7 +59,7 @@ $gh-green: #367c2b;
 
 @media (max-width: 890px) {
   #marquee {
-    margin: 5px;
+    margin: 40px 40px 20px 20px;
   }
 
   #marquee > h1 {
@@ -75,7 +75,11 @@ $gh-green: #367c2b;
   }
 
   #marquee > h4 {
-    font-size: 1em;
+    font-size: 1.5em;
+  }
+
+  #marquee > ul > li > a {
+    font-size: 1.2em;
   }
 
 }
