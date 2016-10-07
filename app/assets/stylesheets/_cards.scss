@@ -15,9 +15,10 @@ $gh-green: #367c2b;
     }
 
     .card {
-      border: 2px solid black;
+      box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+      border: 1px solid black;
       border-radius: 10px;
-      background: lightgray;
+      background: #FFF;
       width: 48%;
       margin: 4px 1%;
       float: left;
@@ -96,15 +97,16 @@ $gh-green: #367c2b;
     }
 
     .accordion-content {
-      padding: 5px;
+      padding: 0;
       border-bottom-left-radius: 8px;
       border-bottom-right-radius: 8px;
-      background: lightgray;
+      background: #FFF;
       border: none;
       border-top: 1px solid black;
 
       .item-details {
-        width: 80%;
+        width: calc(100% - 75px);
+        padding: 15px 5px 0;
         float: left;
         p {
           margin: 0 0 5px;
@@ -113,6 +115,7 @@ $gh-green: #367c2b;
 
       .item-links {
         width: 20%;
+        padding: 15px 5px 0 0;
         float: right;
         display: flex;
         flex-direction: column;

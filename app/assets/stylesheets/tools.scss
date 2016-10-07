@@ -21,6 +21,8 @@ $gh-green: #367c2b;
       width: calc(100% - 80px);
       margin: 0 1px 0 0;
       vertical-align: bottom;
+      box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+      border-radius: 8px;
     }
   }
   .search-button {
