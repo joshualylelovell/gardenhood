@@ -1,5 +1,5 @@
-<div class="row">
-  <div class="medium-6 medium-offset-2 large-6 large-offset-2 columns">
+<div>
+  <div class="form">
     <%= form_for(@tool, html: { class: "directUpload", data: { 'form-data' => (@s3_direct_post.fields), 'url' => @s3_direct_post.url, 'host' => URI.parse(@s3_direct_post.url).host } }) do |f| %>
       <% if @tool.errors.any? %>
         <div id="error_explanation">
@@ -13,24 +13,25 @@
         </div>
       <% end %>
 
+      <h4><%= title %></h4>
+
       <div class="field">
-        <%= f.label :name %><br>
-        <%= f.text_field :name %>
+        <%= f.text_field :name, placeholder: "Tool Name" %>
       </div>
 
       <div class="field">
-        <%= f.label :image %><br>
+        <%= f.label :image %>
         <%= f.file_field :image %>
       </div>
 
       <div class="field">
-        <%= f.label :details %><br>
-        <%= f.text_field :details %>
+        <%= f.text_field :details, placeholder: "Details" %>
       </div>
 
       <div class="actions">
-        <%= f.submit%>
+        <%= f.button "Create Tool", class: "success button" %>
       </div>
     <% end %>
+    <%= link_to 'Back', tools_path, class: "success button" %>
   </div>
 </div>
