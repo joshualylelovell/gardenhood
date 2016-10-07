@@ -29,14 +29,23 @@ GENERAL
 }
 
 body {
-  background: $gh-green; /* fallback for old browsers */
-  background: -webkit-linear-gradient(top, lighten( $gh-green, 10% ), darken( $gh-green, 5% ));
-  background: -moz-linear-gradient(top, lighten( $gh-green, 10% ), darken( $gh-green, 5% ));
-  background: -o-linear-gradient(top, lighten( $gh-green, 10% ), darken( $gh-green, 5% ));
-  background: linear-gradient(to bottom, lighten( $gh-green, 10% ), darken( $gh-green, 5% ));
+  // background: $gh-green; /* fallback for old browsers */
+  // background: -webkit-linear-gradient(top, lighten( $gh-green, 10% ), darken( $gh-green, 5% ));
+  // background: -moz-linear-gradient(top, lighten( $gh-green, 10% ), darken( $gh-green, 5% ));
+  // background: -o-linear-gradient(top, lighten( $gh-green, 10% ), darken( $gh-green, 5% ));
+  // background: linear-gradient(to bottom, lighten( $gh-green, 10% ), darken( $gh-green, 5% ));
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100vh;
+  background: url("grass2.jpeg") no-repeat center center fixed;
+  background-size: cover;
+  // @media (max-width: 948px) {
+  //   height: calc(100vh - 41px);
+  // }
+  // @media (min-width: 949px) {
+  //   height: calc(100vh - 80px);
+  // }
 }
 
 .wrapper {
