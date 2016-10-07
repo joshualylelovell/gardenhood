@@ -4,7 +4,7 @@ class Tool < ApplicationRecord
   has_many :requests
 
   def self.search(search)
-    where("name LIKE ?", "%#{search}%")
+    where("name ILIKE ?", "%#{search}%")
   end
 
 end
