@@ -93,6 +93,16 @@ $gh-green: #367c2b;
   transition: all 0.3 ease;
   cursor: pointer;
 }
+.form .cancel-account {
+  color: #ec5840;
+}
+.form .button.alert {
+  background-color: #ec5840;
+  margin: 0 0 15px;
+}
+.form .button.alert:hover, .form .button.alert:active, .form .button.alert:focus {
+  background-color: red;
+}
 .form .button:hover,.form .button:active,.form .button:focus {
   background: #43A047;
 }
