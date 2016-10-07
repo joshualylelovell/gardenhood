@@ -105,7 +105,7 @@ $gh-green: #367c2b;
       border-top: 1px solid black;
 
       .item-details {
-        width: calc(100% - 75px);
+        width: calc(100% - 80px);
         padding: 15px 5px 0;
         float: left;
         p {
@@ -114,8 +114,8 @@ $gh-green: #367c2b;
       }
 
       .item-links {
-        width: 20%;
-        padding: 15px 5px 0 0;
+        width: 80px;;
+        padding: 15px 10px 0 0;
         float: right;
         display: flex;
         flex-direction: column;
