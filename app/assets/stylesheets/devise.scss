@@ -34,7 +34,15 @@ $gh-green: #367c2b;
   .request-h4 {
     margin-bottom: 5px;
   }
-
+  .edit_gardener #gardener_password {
+    margin: 0 0 5px;
+  }
+  .edit_gardener #gardener_current_password {
+    margin: 15px 0 0;
+  }
+  .edit_gardener #gardener_password_confirmation {
+    margin: 0;
+  }
 }
 .form .remember-me {
   text-align: left;
@@ -94,9 +102,16 @@ $gh-green: #367c2b;
   font-size: 12px;
   display: inline;
 }
+.edit_gardener .message {
+  display: inline-block;
+  margin: 0;
+}
 .form .message a {
   color: #4CAF50;
   text-decoration: none;
+}
+.form .update-gardener-submit {
+  margin: 10px 0 0;
 }
 .form-toggle:hover {
   color: #4CAF50;
@@ -106,6 +121,10 @@ $gh-green: #367c2b;
 }
 .form .gardener-login #gardener_password {
   margin: 0;
+}
+
+.form .cancel-account {
+  margin: 10px 0 5px;
 }
 
 #error_explanation > h2 {
