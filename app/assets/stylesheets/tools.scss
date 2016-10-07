@@ -14,6 +14,7 @@ $gh-green: #367c2b;
     display: inline-block;
   }
   #search-form {
+
     display: inline-block;
     width: calc(100% - 72px);
     margin: 0;
@@ -24,11 +25,27 @@ $gh-green: #367c2b;
       vertical-align: bottom;
       box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
       border-radius: 8px;
+      @media (max-width: 300px) {
+        width: 204%;
+        margin-bottom: 5px;
+      }
     }
+    @media (max-width: 300px) {
+      width: 49%;
+    }
+
   }
   .search-button {
     margin: 0;
     height: 39px;
+    @media (max-width: 300px) {
+      width: 100%;
+    }
+  }
+  .reset-button {
+    @media (max-width: 300px) {
+      width: 49%;
+    }
   }
   p {
     color: white;
@@ -45,3 +62,5 @@ $gh-green: #367c2b;
   margin-left: 1%;
   margin: -20px 0 0 1%;
 }
+
+
