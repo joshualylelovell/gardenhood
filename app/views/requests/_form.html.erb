@@ -1,6 +1,6 @@
 <div>
   <div class="form">
-    <h4> New request for: </h4>
+    <h4> <%= title %> for: </h4>
     <h4 id="requested-tool"><%= @request.tool.name %></h4>
 
     <%= form_for(@request) do |f| %>
