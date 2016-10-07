@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   root to: 'static_pages#home'
   get 'home', to: 'static_pages#home', as: 'home'
   get 'about', to: 'static_pages#about', as: 'about'
-  get 'cards', to: 'static_pages#cards', as: 'cards'
 
   # Devise
   devise_for :gardeners
@@ -12,7 +11,6 @@ Rails.application.routes.draw do
 
   #Tools routes
   resources :tools
-
   resources :requests
 
   get 'requests/:id/set_approved', to: 'requests#set_approved', as: 'approved'

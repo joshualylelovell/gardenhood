@@ -17,7 +17,7 @@ class ToolsController < ApplicationController
   end
 
   def show
-    @tool = Tool.find(params[:id])
+    redirect_to tools_url
   end
 
   def new
@@ -28,8 +28,6 @@ class ToolsController < ApplicationController
   end
 
   def create
-    puts "TOOL PARAMS:"
-    puts tool_params.inspect
     @tool = Tool.new(tool_params)
     @tool.gardener = current_gardener
     respond_to do |format|
