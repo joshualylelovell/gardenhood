@@ -1,7 +1,11 @@
 <nav class="top-bar nav-desktop" id="gh-nav">
   <div class="wrapper">
     <div class="top-bar-left">
+      <% if signed_in? %>
+        <%= link_to 'GARDENHOOD', tools_path, id: "site-logo" %>
+      <% else %>
         <%= link_to 'GARDENHOOD', home_path, id: "site-logo" %>
+      <% end %>
     </div>
 
     <div class="top-bar-right">
