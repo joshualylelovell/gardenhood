@@ -28,6 +28,17 @@ GENERAL
   outline: none;
 }
 
+body {
+  background: $gh-green; /* fallback for old browsers */
+  background: -webkit-linear-gradient(top, lighten( $gh-green, 10% ), darken( $gh-green, 5% ));
+  background: -moz-linear-gradient(top, lighten( $gh-green, 10% ), darken( $gh-green, 5% ));
+  background: -o-linear-gradient(top, lighten( $gh-green, 10% ), darken( $gh-green, 5% ));
+  background: linear-gradient(to bottom, lighten( $gh-green, 10% ), darken( $gh-green, 5% ));
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 .wrapper {
   margin: 0 auto;
 }

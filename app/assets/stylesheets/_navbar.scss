@@ -59,9 +59,12 @@ MOBILE-NAV
   }
 }
 
-.off-canvas-wrapper, #mobile-menu {
-  // height: 100vh;
-  background-color: $gh-green;
+.off-canvas-wrapper {
+  height: 100%;
+}
+
+.off-canvas {
+  background: rgba(0, 0, 0, 0);
 }
 
 #mobile-menu a {
