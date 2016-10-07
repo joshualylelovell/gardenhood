@@ -16,7 +16,6 @@ $gh-green: #367c2b;
 
     .card {
       box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-      border: 1px solid black;
       border-radius: 10px;
       background: #FFF;
       width: 48%;
@@ -102,7 +101,7 @@ $gh-green: #367c2b;
       border-bottom-right-radius: 8px;
       background: #FFF;
       border: none;
-      border-top: 1px solid black;
+      border-top: 1px solid lightgray;
 
       .item-details {
         width: calc(100% - 80px);

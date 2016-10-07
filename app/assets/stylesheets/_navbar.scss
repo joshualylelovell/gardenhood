@@ -14,17 +14,16 @@ $gh-green: #367c2b;
 #gh-nav {
   background-color: $gh-yellow;
   color: $gh-green;
-  padding-top: 0;
-  padding-bottom: 0;
+  padding: 0;
 }
 
 #site-logo {
   color: $gh-green;
   background-color: $gh-yellow;
   line-height: 80px;
-  padding-top: 0;
-  padding-bottom: 0;
+  padding: 0 8px;
   font-size: 3em;
+  display: block;
 }
 
 #site-logo:hover {
