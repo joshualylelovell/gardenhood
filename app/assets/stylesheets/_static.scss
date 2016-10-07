@@ -23,8 +23,8 @@ $gh-green: #367c2b;
 
 #marquee {
   margin: 150px;
-  background-color: rgba(1,177,30,.2);
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  // background-color: rgba(1,177,30,.2);
+  // box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 
 #marquee > h1 {
@@ -51,4 +51,31 @@ $gh-green: #367c2b;
 #marquee > ul > li > a {
   color: $gh-yellow;
   font-size: 1.8em;
+}
+
+#marquee > ul > li {
+  list-style: none;
+}
+
+@media (max-width: 890px) {
+  #marquee {
+    margin: 5px;
+  }
+
+  #marquee > h1 {
+    font-size: 3.5em;
+  }
+
+  #marquee > h3 {
+    font-size: 2em;
+  }
+
+  #marquee > h2 {
+    font-size: 2em;
+  }
+
+  #marquee > h4 {
+    font-size: 1em;
+  }
+
 }
