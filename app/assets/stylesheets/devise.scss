@@ -107,3 +107,17 @@ $gh-green: #367c2b;
 .form .gardener-login #gardener_password {
   margin: 0;
 }
+
+#error_explanation > h2 {
+  font-size: 25px;
+  display: none;
+}
+
+#error_explanation > ul {
+  margin: 0 0 15px;
+}
+
+#error_explanation > ul > li {
+  font-size: 16px;
+  list-style: none;
+}
