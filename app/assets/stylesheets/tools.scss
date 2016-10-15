@@ -16,10 +16,14 @@ $gh-green: #367c2b;
   #search-form {
 
     display: inline-block;
+    width: -webkit-calc(100% - 72px);
+    width: -moz-calc(100% - 72px);
     width: calc(100% - 72px);
     margin: 0;
     #search {
       display: inline-block;
+      width: -webkit-calc(100% - 80px);
+      width: -moz-calc(100% - 80px);
       width: calc(100% - 80px);
       margin: 0 1px 0 0;
       vertical-align: bottom;
