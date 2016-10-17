@@ -63,8 +63,14 @@ $gh-green: #367c2b;
 }
 .form label {
   text-align: left;
-  padding: 5px 0 0 15px;
+  padding: 5px 0 0 0px;
   color: #A9A9A9;
+}
+.form label.remember_me_label {
+  margin-left: 0px;
+}
+#gh-checkbox-div{
+  margin: 1px 0px;
 }
 .form #tool_image {
   margin: 0;
